@@ -30,27 +30,42 @@ Serial: SR1245
 ```python spectroscopy.py calib```
 
 - Control grating / wavelength
-```python spectroscopy.py grating 1          # set grating index to 1```
-```python spectroscopy.py get-grating        # read current grating```
-```python spectroscopy.py wavelength 532     # set central wavelength to 532 nm```
-```python spectroscopy.py get-wavelength     # query central wavelength```
+
+     ```python spectroscopy.py grating 1          # set grating index to 1```
+
+    ```python spectroscopy.py get-grating        # read current grating```
+
+    ```python spectroscopy.py wavelength 532     # set central wavelength to 532 nm```
+
+    ```python spectroscopy.py get-wavelength     # query central wavelength```
 
 - Acquire spectrum
-```python spectroscopy.py acquire --outfile spectrum.csv ```
-Options:
-`--start / --end` → limit wavelength range (nm)
-`--points` → resample to fixed number of points (e.g. 1024)
-`--outfile` → output CSV filename (default: `spectrum.csv`)
-Note: Some DLL versions do not export ShamrockAcquire.
-In that case, this command will raise NotImplementedError.
-This is expected: Shamrock controls the optics, while the detector SDK handles intensity acquisition.
+
+   ```python spectroscopy.py acquire --outfile spectrum.csv ```
+
+- Options:
+
+    `--start / --end` → limit wavelength range (nm)
+
+    `--points` → resample to fixed number of points (e.g. 1024)
+
+    `--outfile` → output CSV filename (default: `spectrum.csv`)
+
+    Note: Some DLL versions do not export ShamrockAcquire.
+    In that case, this command will raise NotImplementedError.
+    This is expected: Shamrock controls the optics, while the detector SDK handles intensity acquisition.
 
 - Plot saved spectrum
-```python spectroscopy.py plot spectrum.csv```
 
--Example workflow
-```spectroscopy.py info  # check device```
-```python spectroscopy.py wavelength 600  # set central wavelength```
-```python spectroscopy.py acquire --start 400 --end 700 --points 1024 --outfile test.csv # acquire between 400–700 nm, resample to 1024 points```
-```python spectroscopy.py plot test.csv # plot result```
+   ```python spectroscopy.py plot spectrum.csv```
+
+- Example workflow
+
+   ```spectroscopy.py info  # check device```
+
+   ```python spectroscopy.py wavelength 600  # set central wavelength```
+
+   ```python spectroscopy.py acquire --start 400 --end 700 --points 1024 --outfile test.csv # acquire between 400–700 nm, resample to 1024 points```
+
+   ```python spectroscopy.py plot test.csv # plot result```
 
