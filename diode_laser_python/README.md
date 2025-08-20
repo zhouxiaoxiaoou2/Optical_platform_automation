@@ -20,9 +20,7 @@ Both provide the same high-level functions:
 ## Installation
 
 You need Python 3.8+ and the `hidapi` wrapper:
-
-```bash
-pip install hid
+`pip install hid`
 
 On Linux/macOS you may also need to install libhidapi from your package manager.
 
